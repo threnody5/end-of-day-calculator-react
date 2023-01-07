@@ -8,3 +8,8 @@
     text-decoration: underline;
     text-decoration-thickness: 2px;
 }
+
+.date {
+    text-decoration: underline;
+    text-decoration-thickness: 1px;
+}
