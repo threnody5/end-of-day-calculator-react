@@ -1,9 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.css';
 
 
-export default function Header() {
+export default function Body() {
     return (
-        <div>
-            <h1>Body Works</h1>
+        <div className='header-container'>
+            <h1 className=''>Body Works</h1>
         </div>
     )
 }
