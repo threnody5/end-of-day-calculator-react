@@ -41,7 +41,7 @@ export default function Header() {
       </div>
       <div>
         {/* <Date /> */}
-        {currentMonth}, {day}, {year}
+        <h3 className='date'>{currentMonth}, {day}, {year}</h3>
       </div>
     </div>
   );
