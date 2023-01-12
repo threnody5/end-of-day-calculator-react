@@ -18,6 +18,7 @@ export default function Body() {
   const [fifty, setFifty] = useState(0);
   const [hundred, setHundred] = useState(0);
   const [cheques, setCheques] = useState(0);
+  const [creditCard, setCreditCard] = useState(0);
   const [invoiceTotal, setInvoiceTotal] = useState(0);
 
   /**
@@ -110,11 +111,17 @@ export default function Body() {
     subtractionCalculator(parsed(totalCash), OPENING_CASH_VALUE)
   );
 
-  const totalDeposit = additionCalculator(totalCashForDeposit, parsed(cheques));
+  const totalDeposit = totalCashForDeposit + parsed(cheques) + parsed(creditCard);
 
   const overOrShortTotal = parsed(totalDeposit) - parsed(invoiceTotal);
 
   return (
+    <div>
+      <input
+      className='name-input'
+        type='text'
+        placeholder='Name'
+        />
     <div className='body-container mt-3'>
       <Table className='table-container'>
         <tbody>
@@ -123,6 +130,7 @@ export default function Body() {
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setNickel(e.target.value);
@@ -130,13 +138,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${nickelTotal.toFixed(2)} Total</td>
+            <td>${nickelTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$0.10</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setDime(e.target.value);
@@ -144,13 +153,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${dimeTotal.toFixed(2)} Total</td>
+            <td>${dimeTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$0.25</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setQuarter(e.target.value);
@@ -158,13 +168,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${quarterTotal.toFixed(2)} Total</td>
+            <td>${quarterTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$1.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setdollar(e.target.value);
@@ -172,13 +183,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${dollarTotal.toFixed(2)} Total</td>
+            <td>${dollarTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$2.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setToonie(e.target.value);
@@ -186,13 +198,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${toonieTotal.toFixed(2)} Total</td>
+            <td>${toonieTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$5.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setFive(e.target.value);
@@ -200,13 +213,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${fiveTotal.toFixed(2)} Total</td>
+            <td>${fiveTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$10.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setTen(e.target.value);
@@ -214,13 +228,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${tenTotal.toFixed(2)} Total</td>
+            <td>${tenTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$20.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setTwenty(e.target.value);
@@ -228,13 +243,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${twentyTotal.toFixed(2)} Total</td>
+            <td>${twentyTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$50.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setFifty(e.target.value);
@@ -242,13 +258,14 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${fiftyTotal.toFixed(2)} Total</td>
+            <td>${fiftyTotal.toFixed(2)}</td>
           </tr>
           <tr>
             <td>$100.00</td>
             <td>X</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setHundred(e.target.value);
@@ -256,7 +273,7 @@ export default function Body() {
               />
             </td>
             <td>=</td>
-            <td>${hundredTotal.toFixed(2)} Total</td>
+            <td>${hundredTotal.toFixed(2)}</td>
           </tr>
           <tr />
           <tr>
@@ -266,11 +283,11 @@ export default function Body() {
             <td>=</td>
             <td>${totalCash.toFixed(2)}</td>
           </tr>
-          <tr>
+          {/* <tr>
             <td>Opening Cash: </td>
             <td>=</td>
             <td>${OPENING_CASH_VALUE.toFixed(2)}</td>
-          </tr>
+          </tr> */}
           <tr>
             <td>
               <strong>Total Cash for Deposit: </strong>
@@ -283,11 +300,25 @@ export default function Body() {
             <td>$</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setCheques(e.target.value);
                 }}
               />
+            </td>
+          </tr>
+          <tr>
+            <td>Credit Card Total: </td>
+            <td>$</td>
+            <td>
+              <input
+              className='input-field'
+                type='text'
+                onChange={(e) => {
+                  setCreditCard(e.target.value);
+                }}
+                />
             </td>
           </tr>
           <tr>
@@ -302,6 +333,7 @@ export default function Body() {
             <td>=</td>
             <td>
               <input
+              className='input-field'
                 type='text'
                 onChange={(e) => {
                   setInvoiceTotal(e.target.value);
@@ -318,6 +350,7 @@ export default function Body() {
           </tr>
         </tbody>
       </Table>
+    </div>
     </div>
   );
 }
