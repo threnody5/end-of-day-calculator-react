@@ -1,7 +1,6 @@
 .header-container {
     align-items: center;
     flex: auto;
-    text-align: center;
 }
 
 .header-title {
@@ -12,4 +11,5 @@
 .date {
     text-decoration: underline;
     text-decoration-thickness: 1px;
+    padding-left: 50px;
 }

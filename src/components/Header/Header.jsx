@@ -35,9 +35,9 @@ export default function Header() {
   const currentMonth = monthName[month];
   
   return (
-    <div className='header-container pt-5'>
+    <div className='header-container pt-3'>
       <div>
-        <h1 className='header-title'>EOD Calculator</h1>
+        <h1 className='header-title'><strong>EOD Calculator</strong></h1>
       </div>
       <div>
         {/* <Date /> */}
