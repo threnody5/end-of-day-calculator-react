@@ -2,8 +2,18 @@
     margin-left: 50px;
     display: flex;
     justify-content: center;
+    height: 70vh;
 }
 
 .table-container {
-    width: 650px;
+    width: 700px;
+}
+
+.name-input {
+    margin-left: -375px;
+    text-align: center;
+}
+
+.input-field {
+    text-align: center;
 }
